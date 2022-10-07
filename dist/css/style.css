@@ -2509,4 +2509,11 @@
 body,
 html {
   scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+}
+
+.table {
+  border: 1px solid red;
+  padding: 20px;
 }

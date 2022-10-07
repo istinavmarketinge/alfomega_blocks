@@ -1,0 +1,16 @@
+<div class="table table2asdasd__js">
+    <div class="table__in table__styled">
+        <table width="100%">
+            <thead>
+                <tr>
+                    @@for (var i = 0; i < titles.length; i++) {
+                        <th>`+titles[i]+`</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @@loop('../../components/table_tr/table_tr.html', "@@loop_by")
+            </tbody>
+        </table>
+    </div>
+</div>
