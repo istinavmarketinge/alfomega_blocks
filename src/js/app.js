@@ -25,7 +25,7 @@ if (isSafari) {
 // }
 
 $(document).ready(function() {
-    first_table.init();
+    first_table.init('.table', '#table');
     second_table.init();
 })
 

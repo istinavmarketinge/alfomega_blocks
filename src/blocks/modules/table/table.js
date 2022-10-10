@@ -1,6 +1,7 @@
 const Table = class Table {
-    constructor(selector = ".table") {
+    constructor(selector = ".table", id = '#table') {
         this.selector = selector;
+        this.id = id;
     }
     setTableEditable() {
         document.querySelectorAll(this.selector).forEach(item => {
@@ -14,8 +15,12 @@ const Table = class Table {
             })
         })
     }
+    initDataTable() {
+        $(`${this.id}`).dataTable();
+    }
     init() {
-        this.setTableEditable();
+        // this.setTableEditable();
+        this.initDataTable();
     }
 }
 
