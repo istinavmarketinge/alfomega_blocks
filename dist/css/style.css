@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* cyrillic-ext */
 
 @font-face {
@@ -2513,7 +2515,38 @@ html {
   margin: 0;
 }
 
-.table {
-  border: 1px solid red;
-  padding: 20px;
+.table .dataTable {
+  order: -1;
+}
+
+.table .dataTables_info {
+  display: none;
+}
+
+.table .dataTables_wrapper .dataTables_paginate {
+  float: none;
+}
+
+.table .dataTables_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.table .dataTables_wrapper:after {
+  display: none;
+}
+
+.table .dataTables_length label {
+  font-size: 0;
+}
+
+.table .dataTables_length label:before {
+  content: "Отображать на странице:";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #001042;
 }

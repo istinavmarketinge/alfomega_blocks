@@ -12,8 +12,8 @@ var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
 
 
 
-window.first_table = new Table('.table__js');
-window.second_table = new Table('.table2asdasd__js');
+window.first_table = new Table('.table__js', '#table');
+// window.second_table = new Table('.table2asdasd__js', '#table2');
 
 if (isSafari) {
     $('.wrapper').addClass('isSafari');
@@ -25,8 +25,8 @@ if (isSafari) {
 // }
 
 $(document).ready(function() {
-    first_table.init('.table', '#table');
-    second_table.init();
+    first_table.init();
+    // second_table.init();
 })
 
 

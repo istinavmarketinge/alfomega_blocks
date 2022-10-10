@@ -1,4 +1,48 @@
+// .table {
+//     &__bottom_left,
+//     .dropdown {
+//         display: flex;
+//         align-items: center;
+//         &__bottom {
+//             .item {
+//                 cursor: pointer;
+//             }
+//         }
+//     }
+// }
+
+// .dataTables_info,
+// .dataTables_paginate {
+//     display: none;
+// }
 .table {
-    border: 1px solid red;
-    padding: 20px;
+    .dataTable {
+        order: -1;
+    }
+    .dataTables_info {
+        display: none;
+    }
+    .dataTables_wrapper .dataTables_paginate {
+        float: none;
+    }
+    .dataTables_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .dataTables_wrapper:after {
+        display: none;
+    }
+    .dataTables_length label {
+        font-size: 0;
+        &:before {
+            content: "Отображать на странице:";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+            color: #001042;
+        }
+    }
 }
