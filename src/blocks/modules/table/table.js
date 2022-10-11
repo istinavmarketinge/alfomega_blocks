@@ -3,7 +3,6 @@ const Table = class Table {
         this.selector = selector;
         this.id = id;
         this.table = null;
-        console.log(this.selector, this.id);
     }
     setTableEditable() {
         document.querySelectorAll(this.selector).forEach(item => {
@@ -23,13 +22,11 @@ const Table = class Table {
         this.table = $(`${this.id}`).dataTable({
             initComplete: function () {
                 self.addPageSelector(this);
+                self.addPaddingToPager();
             },
             searching: false,
             responsive: true,
             pagingType: 'simple',
-            'buttons-action': function() {
-                console.log(1231321);
-            },
             language: {
                 paginate: {
                     first:      "В начало",
@@ -38,28 +35,27 @@ const Table = class Table {
                     last:       "В конец"
                 },
             }
-        });
-
-        
-        
+        });        
+    }
+    addPaddingToPager() {
+        setTimeout(() => {
+            const width = $(`${this.id} tr td:last-child`).innerWidth();
+            $(`${this.id}`).siblings('.table__pagination').css('padding-right', `${Math.round(width)}px`);
+        }, 0)
     }
     addPageSelector(table) {
-        console.log('addPageSelector')
         $(table[0]).siblings('.dataTables_paginate').wrap('<div class="table__pagination"></div>');
         let pagesCount = table.api().page.info().pages;
         let pageNumber = table.api().page.info().page;
         $(table[0]).siblings('.table__pagination').prepend(`<div class="table__counter"><div class="input"><input type="number" value="${pageNumber+1}" min="1" max="${pagesCount}" /></div><div class="count">/ ${pagesCount}</div></div>`);
-        $(table[0]).siblings('.table__pagination').find('.table__counter').on('click', function(event) {
-            event.stopPropagation();
-        })
     }
     redrawPager() {
-        console.log('redrawPager');
-        console.log(this.table);
         let pagesCount = this.table.api().page.info().pages;
         let pageNumber = this.table.api().page.info().page;
         let input = $(this.id).siblings('.table__pagination').find('.table__counter input');
-        console.log(pagesCount, pageNumber, input);
+        let pages_counter = $(this.id).siblings('.table__pagination').find('.table__counter .count');
+        pages_counter.text(`/ ${pagesCount}`);
+        input.prop('max', pagesCount);
         input.val(pageNumber+1);
     }
     init() {
@@ -68,6 +64,27 @@ const Table = class Table {
         $(`${this.id}`).siblings('.table__pagination').on('click', function() {
             self.redrawPager(this);
         });
+        $(`${this.id}`).siblings('.table__pagination').find('.table__counter').on('click', function(event) {
+            event.stopPropagation();
+        }).on('change', 'input', function() {
+            let pagesCount = self.table.api().page.info().pages;
+            let pageNumber = self.table.api().page.info().page;
+            let pageNumberVal = $(this).val();
+            console.log(self);
+            if (pageNumberVal > 0 && pageNumberVal <= pagesCount) {
+                self.table.api().page(+pageNumberVal - 1).draw(false);
+            } else {
+                $(this).val(pageNumber + 1);
+            }
+        });
+        $(`${this.id}`).siblings('.dataTables_length').find('select').on('change', function() {
+            self.redrawPager();
+            
+            console.log(self.table.api().data().length);
+        });
+        $(window).on('resize', () => {
+            this.addPaddingToPager();
+        })
     }
 }
 
