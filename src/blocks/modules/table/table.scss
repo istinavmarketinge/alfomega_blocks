@@ -45,4 +45,9 @@
             color: #001042;
         }
     }
+    .dataTables_paginate {
+        > span {
+            display: none;
+        }
+    }
 }
