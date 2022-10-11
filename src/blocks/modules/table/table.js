@@ -8,11 +8,12 @@ const Table = class Table {
     setTableEditable() {
         document.querySelectorAll(this.selector).forEach(item => {
             item.querySelectorAll('td').forEach(td => {
-                td.addEventListener('mouseenter', (event) => {
-                    event.target.setAttribute('contenteditable', true)
+                $(td).not('[data-prevent_edit]').on('click', (event) => {
+                    event.target.setAttribute('contenteditable', true);
+                    event.target.focus();
                 });
-                td.addEventListener('mouseleave', (event) => {
-                    event.target.setAttribute('contenteditable', true)
+                $(td).not('[data-prevent_edit]').on('blur', (event) => {
+                    event.target.setAttribute('contenteditable', false)
                 })
             })
         })
@@ -23,7 +24,7 @@ const Table = class Table {
         });
     }
     init() {
-        // this.setTableEditable();
+        this.setTableEditable();
         this.initDataTable();
         console.log(this.table);
     }

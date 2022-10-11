@@ -2550,3 +2550,7 @@ html {
   line-height: 18px;
   color: #001042;
 }
+
+.table .dataTables_paginate > span {
+  display: none;
+}
