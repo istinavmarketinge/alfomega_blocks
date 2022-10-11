@@ -16,6 +16,17 @@
 //     display: none;
 // }
 .table {
+
+    &__styled thead {}
+    &__styled th {}
+    &__styled td {}
+    &__counter,
+    &__pagination {
+        display: flex;
+        align-items: center;
+    }
+
+
     .dataTable {
         order: -1;
     }

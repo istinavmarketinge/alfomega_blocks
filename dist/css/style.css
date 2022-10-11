@@ -2515,6 +2515,12 @@ html {
   margin: 0;
 }
 
+.table__counter,
+.table__pagination {
+  display: flex;
+  align-items: center;
+}
+
 .table .dataTable {
   order: -1;
 }
