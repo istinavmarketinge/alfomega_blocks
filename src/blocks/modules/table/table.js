@@ -47,7 +47,7 @@ const Table = class Table {
         $(table[0]).siblings('.dataTables_paginate').wrap('<div class="table__pagination"></div>');
         let pagesCount = table.api().page.info().pages;
         let pageNumber = table.api().page.info().page;
-        $(table[0]).siblings('.table__pagination').prepend(`<div class="table__counter"><div class="input"><input type="number" value="${pageNumber+1}" min="1" max="${pagesCount}" /></div><div class="count">/ ${pagesCount}</div></div>`);
+        $(table[0]).siblings('.table__pagination').prepend(`<div class="table__counter"><div class="input"><input type="text" value="${pageNumber+1}" min="1" max="${pagesCount}" /></div><div class="count">/ ${pagesCount}</div></div>`);
     }
     redrawPager() {
         let pagesCount = this.table.api().page.info().pages;
