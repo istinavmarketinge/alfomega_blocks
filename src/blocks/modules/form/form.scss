@@ -1,0 +1,152 @@
+.personalForm {
+    @media all and (min-width: 1025px) {
+        padding-right: 305px;
+    }
+    @media all and (max-width: 1024px) {
+        padding: 20px;
+    }
+    &__in {
+        background: #FFFFFF;
+        box-shadow: 2px 3px 26px #EBF3FF, 2px 3px 1px rgba(0, 0, 0, 0.15);
+        border-radius: 18px;
+        
+        font-family: 'IBM Plex Sans', sans-serif;
+        @media all and (min-width: 1025px) {
+            padding: 40px 50px;
+        }
+        @media all and (max-width: 1024px) {
+            padding: 20px;
+        }
+    }
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__name {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 26px;
+        color: #001042;
+    }
+    &__opener {
+        display: flex;
+        align-items: center;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        color: #9EA2AB;
+        cursor: pointer;
+        &:before {
+            content: "Развернуть";
+        }
+        .text {
+            margin-right: 13px;
+        }
+        .arrow {
+            &:after {
+                content: "⥥";
+                display: block;
+                transition: all .3s ease;
+            }
+        }
+        &.isOpened {
+            &:before {
+                content: "Свернуть";
+            }
+            .arrow {
+                &:after {
+                    transform: rotateX(180deg);
+                }
+            }
+        }
+    }
+    &__fields {
+        display: none;
+        padding-top: 40px;
+    }
+    &__fields--row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px 74px;
+    }
+    &__field {
+        @media all and (min-width: 769px) {
+            display: flex;
+            align-items: center;
+        }
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+    &__field-left {
+        @media all and (min-width: 769px) {
+            width: 315px;
+            margin-right: 15px;
+            font-size: 20px;
+            line-height: 26px;
+        }
+        @media all and (max-width: 768px) {
+            margin-bottom: 5px;
+            font-size: 15px;
+            line-height: 1.2;
+        }
+        font-style: normal;
+        font-weight: 500;
+        
+        /* identical to box height */
+
+        color: #858892;
+        span {
+            color: #c51313;
+        }
+    }
+    &__field-right {
+        @media all and (min-width: 769px) {
+            width: calc(100% - 330px);
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 7px 16px;
+            box-sizing: border-box;
+            background: #FFFFFF;
+            border: 1.6px solid #CCCCCC;
+            border-radius: 4px;
+            margin: 0;
+            &,
+            &::placeholder {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 21px;
+                color: #9EA2AB;
+            }
+        }
+    }
+    &__fields--row &__field-left {
+        width: 119px;
+        margin-right: 32px;
+    }
+    &__fields--row &__field-right {
+        width: calc(100% - 151px);
+    }
+    &__button {
+        background: #E3E8F5;
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 44px;
+        border: none;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 21px;
+        text-align: center;
+        color: #001042;
+    }
+}

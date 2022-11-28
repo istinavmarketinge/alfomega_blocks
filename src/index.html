@@ -23,6 +23,78 @@
         "id": "table",
         loop_by: "files/table1.json"
     })
+    @@include('blocks/modules/form/form.html', {
+        is_collapsable: true,
+        title: "Добавление товара из перечня",
+        button_text: "Редактировать",
+        type: 1,
+        has_row: false,
+        fields: [
+            {
+                type: "tel",
+                placeholder: "Введите телефон",
+                title: "Телефоны для связи:",
+                is_required: true
+            },
+            {
+                type: "email",
+                placeholder: "Введите email",
+                title: "Email:",
+                is_required: true
+            },
+            {
+                type: "textarea",
+                placeholder: "Введите адрес",
+                title: "Адрес",
+                is_required: false
+            }
+        ]
+    })
+    @@include('blocks/modules/form/form.html', {
+        is_collapsable: true,
+        title: "Добавление товара из перечня",
+        button_text: "Редактировать",
+        type: 2,
+        has_row: true,
+        fields: [
+            {
+                type: "tel",
+                placeholder: "Введите телефон",
+                title: "Телефоны для связи:",
+                is_required: true
+            },
+            {
+                type: "email",
+                placeholder: "Введите email",
+                title: "Email:",
+                is_required: true
+            },
+            {
+                type: "tel",
+                placeholder: "Введите телефон",
+                title: "Телефоны для связи:",
+                is_required: true
+            },
+            {
+                type: "email",
+                placeholder: "Введите email",
+                title: "Email:",
+                is_required: true
+            },
+            {
+                type: "textarea",
+                placeholder: "Введите адрес",
+                title: "Адрес",
+                is_required: false
+            },
+            {
+                type: "text",
+                placeholder: "test",
+                title: "Test:",
+                is_required: true
+            },
+        ]
+    })
     <script
         src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="

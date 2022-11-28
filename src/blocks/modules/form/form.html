@@ -1,9 +1,38 @@
-<form action="#" class="personalForm">
-    <div class="personalForm__top">
-        <div class="personalForm__name">Добавление товара из перечня</div>
-        <div class="personalForm__arrow">
-            <div class="text">Свернуть</div>
-            <div class="arrow"></div>
+<form action="#" class="personalForm" id="personalForm@@type">
+    <div class="personalForm__in">
+        <div class="personalForm__top">
+            <div class="personalForm__name">@@title @@has_row</div>
+            @@if (is_collapsable) {
+                <div class="personalForm__opener">
+                    <div class="text"></div>
+                    <div class="arrow"></div>
+                </div>
+            }
+        </div>
+        <div class="personalForm__fields">
+            <div class="personalForm__fields-in@@if(has_row){ personalForm__fields--row}">
+                @@for (var i = 0; i < fields.length; i++) {
+                    <div class="personalForm__field">
+                        <div class="personalForm__field-left">
+                            `+ fields[i].title +`
+                            `+(fields[i].is_required ? '<span>*</span>' : '')+`
+                        </div>
+                        <div class="personalForm__field-right">
+
+                            `+(fields[i].type != "textarea" ? `<input type="`+ fields[i].type +`" placeholder="`+ fields[i].placeholder +`">` : `<textarea placeholder="`+ fields[i].placeholder +`"></textarea>`)+`
+                            
+                        </div>
+                    </div>
+                }
+                <div class="personalForm__field">
+                    @@if (type != 2) {
+                        <div class="personalForm__field-left"></div>
+                    }
+                    <div class="personalForm__field-right">
+                        <button class="personalForm__button">@@button_text</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </form>
