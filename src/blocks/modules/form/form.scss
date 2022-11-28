@@ -64,8 +64,10 @@
         }
     }
     &__fields {
-        display: none;
         padding-top: 40px;
+        &--collapsable {
+            display: none;
+        }
     }
     &__fields--row {
         display: grid;

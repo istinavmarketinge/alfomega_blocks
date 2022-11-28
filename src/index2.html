@@ -9,7 +9,7 @@
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/v/dt/dt-1.12.1/r-2.3.0/datatables.min.css"> -->
 </head>
 <body>
-    @@include('blocks/modules/tabs/tabs.html')
+    @@include('blocks/modules/tabs/tabs2.html')
     @@include('blocks/modules/table/table.html', {
         "titles": [
             "№",
@@ -18,43 +18,16 @@
             "Тип",
             "Количество",
             "Цена, Р",
-            "Дата размещения",
-            ""
+            "Телефон",
+            "Статус"
         ],
         "id": "table",
         loop_by: "files/table1.json",
-        type: 1,
-        title: "Поставка заготовок"
+        type: 2,
+        title: "Обращения заказчиков"
     })
     <hr class="delimiter" />
     @@include('blocks/modules/form/form.html', {
-        is_collapsable: false,
-        title: "Добавление товара из перечня",
-        button_text: "Редактировать",
-        type: 1,
-        has_row: false,
-        fields: [
-            {
-                type: "tel",
-                placeholder: "Введите телефон",
-                title: "Телефоны для связи:",
-                is_required: true
-            },
-            {
-                type: "email",
-                placeholder: "Введите email",
-                title: "Email:",
-                is_required: true
-            },
-            {
-                type: "textarea",
-                placeholder: "Введите адрес",
-                title: "Адрес",
-                is_required: false
-            }
-        ]
-    })
-    <!-- @@include('blocks/modules/form/form.html', {
         is_collapsable: true,
         title: "Добавление товара из перечня",
         button_text: "Редактировать",
@@ -98,7 +71,23 @@
                 is_required: true
             },
         ]
-    }) -->
+    })
+    @@include('blocks/modules/table/table2.html', {
+        "titles": [
+            "№",
+            "Партнер",
+            "Город",
+            "Тип",
+            "Количество",
+            "Цена, Р",
+            "Телефон",
+            ""
+        ],
+        "id": "table2",
+        loop_by: "files/table1.json",
+        type: 3,
+        title: ""
+    })
     <script
         src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="

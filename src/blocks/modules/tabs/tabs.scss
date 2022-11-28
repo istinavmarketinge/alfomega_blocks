@@ -1,0 +1,87 @@
+.personalTabs {
+    font-family: 'IBM Plex Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #E1E1E1;
+    margin-bottom: 60px;
+    padding-right: 167px;
+    &__left {
+        display: flex;
+    }
+    &__item {
+        position: relative;
+        padding: 15px 0;
+        text-decoration: none;
+        &:not(:last-child) {
+            margin-right: 50px;
+        }
+        .text {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 28px;
+            line-height: 36px;
+            color: #001042;
+        }
+        &.isActive {
+            position: relative;
+            &:after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -3px;
+                height: 5px;
+                background: #001042;
+            }
+            .text {
+                font-weight: 700;
+            }
+        }
+        .counter {
+            position: absolute;
+            left: calc(100% + 5px);
+            top: 10px;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 20px;
+            color: #000000;
+            padding: 3px 9px;
+            border-radius: 50%;
+            background: #F8D830;
+        }
+    }
+    &__notify {
+        display: flex;
+        align-items: center;
+        .text {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+            color: #001042;
+            .enabled {
+                color: #2CC513;
+            }
+            .disabled {
+                color: #C51313;
+            }
+        }
+        .icon {
+            width: 21px;
+            font-size: 0;
+            margin-left: 14px;
+            position: relative;
+        }
+        .icon__disabled {
+            position: absolute;
+            width: 38px;
+            height: 2px;
+            background: #CBCFD9;
+            transform-origin: 50% 50%;
+            transform: rotate(-45deg) translate(-14px, 0);
+            border: 2px solid #fff;
+        }
+    }
+}

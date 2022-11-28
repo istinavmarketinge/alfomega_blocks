@@ -1,7 +1,7 @@
 <form action="#" class="personalForm" id="personalForm@@type">
     <div class="personalForm__in">
         <div class="personalForm__top">
-            <div class="personalForm__name">@@title @@has_row</div>
+            <div class="personalForm__name">@@title</div>
             @@if (is_collapsable) {
                 <div class="personalForm__opener">
                     <div class="text"></div>
@@ -9,7 +9,7 @@
                 </div>
             }
         </div>
-        <div class="personalForm__fields">
+        <div class="personalForm__fields@@if(is_collapsable){ personalForm__fields--collapsable}">
             <div class="personalForm__fields-in@@if(has_row){ personalForm__fields--row}">
                 @@for (var i = 0; i < fields.length; i++) {
                     <div class="personalForm__field">

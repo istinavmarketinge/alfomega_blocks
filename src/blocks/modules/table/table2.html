@@ -1,6 +1,7 @@
-<div class="table table2asdasd__js">
+<div class="table table__js">
+    <div class="table__title">@@title</div>
     <div class="table__in table__styled">
-        <table width="100%" id="@@id" data-page-length='15'>
+        <table width="100%" id="@@id" data-page-length='10'>
             <thead>
                 <tr>
                     @@for (var i = 0; i < titles.length; i++) {
@@ -9,7 +10,15 @@
                 </tr>
             </thead>
             <tbody>
-                @@loop('../../components/table_tr/table_tr.html', "@@loop_by")
+                @@if (type == 1) {
+                    @@loop('../../components/table_tr/table_tr.html', "@@loop_by")
+                }
+                @@if (type == 2) {
+                    @@loop('../../components/table_tr/table_tr2.html', "@@loop_by")
+                }
+                @@if (type == 3) {
+                    @@loop('../../components/table_tr/table_tr3.html', "@@loop_by")
+                }
             </tbody>
         </table>
     </div>
