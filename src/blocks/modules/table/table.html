@@ -1,5 +1,9 @@
 <div class="table table__js">
     <div class="table__title">@@title</div>
+    @@include('../filtr/filtr.html', {
+        loop_by: "files/table1.json",
+        title: "Поставка заготовок"
+    })
     <div class="table__in table__styled">
         <table width="100%" id="@@id" data-page-length='10'>
             <thead>

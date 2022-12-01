@@ -34,6 +34,7 @@ const Table = class Table {
                     next:       "Вперед",
                     last:       "В конец"
                 },
+                zeroRecords: "Мы ничего не нашли в таблице",
             }
         });        
     }

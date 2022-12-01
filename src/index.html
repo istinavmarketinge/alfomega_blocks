@@ -13,12 +13,11 @@
     @@include('blocks/modules/table/table.html', {
         "titles": [
             "№",
-            "Партнер",
             "Город",
-            "Тип",
-            "Количество",
-            "Цена, Р",
-            "Дата размещения",
+            "Продукт",
+            "Наличие",
+            "Стоимость, Р",
+            "Характеристики",
             ""
         ],
         "id": "table",
@@ -35,7 +34,7 @@
         has_row: false,
         fields: [
             {
-                type: "tel",
+                type: "range",
                 placeholder: "Введите телефон",
                 title: "Телефоны для связи:",
                 is_required: true

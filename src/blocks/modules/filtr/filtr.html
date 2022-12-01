@@ -1,0 +1,26 @@
+<div class="tableFiltr">
+    <form class="tableFiltr__in">
+        <div class="tableFiltr__field">
+            <div class="title">Город</div>
+            <label class="field">
+                <div class="field__select">
+                    <select name="" id="">
+                        @@loop('../../components/filtr/filtr_option.html', "@@loop_by")
+                    </select>
+                    <div class="opener">⥥</div>
+                </div>
+            </label>
+        </div>
+        <div class="tableFiltr__field">
+            <div class="title">Продукт</div>
+            <label class="field">
+                <div class="field__select">
+                    <select name="" id="">
+                        @@loop('../../components/filtr/filtr_option_prod.html', "@@loop_by")
+                    </select>
+                    <div class="opener">⥥</div>
+                </div>
+            </label>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,68 @@
+.tableFiltr {
+    margin-bottom: 20px;
+    &__in {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+    }
+    &__field {
+        
+        .title {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 21px;
+            color: #001042;
+            margin-bottom: 5px;
+        }
+        .field {
+            border: 1px solid #ABB8E2;
+            font-style: normal;
+            font-size: 16px;
+            color: #001042;
+            padding: 15px 15px 18px;
+            background: #fff;
+            border-radius: 0;
+            box-sizing: border-box;
+            width: 100%;
+            height: 56px;
+
+            display: flex;
+            align-items: center;
+            position: relative;
+            &__select {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+            }
+            select {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                border: none;
+                padding: 0 20px;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                &::-ms-expand { 
+                    display: none; /* удалите стрелку по умолчанию в IE 10 и 11 */
+                }
+            }
+        }
+        .opener {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            width: 40px;
+            text-align: center;
+            line-height: 54px;
+            background: #fff;
+        }
+        .field select:focus + .opener {
+            transform: rotate(180deg);
+        }
+    }
+}
