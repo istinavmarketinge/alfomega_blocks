@@ -12,12 +12,19 @@
     @@include('blocks/modules/tabs/tabs.html')
     @@include('blocks/modules/table/table.html', {
         "titles": [
-            "№",
+            "№ п.п",
+            "Поставщик",
             "Город",
-            "Продукт",
+            "Тип",
+            "Флаг",
+            "Цена/шт",
             "Наличие",
-            "Стоимость, Р",
-            "Характеристики",
+            "Плёнка",
+            "Фактура",
+            "Клеймо",
+            "Отверстие",
+            "RUS",
+            "Метал",
             ""
         ],
         "id": "table",
@@ -34,7 +41,7 @@
         has_row: false,
         fields: [
             {
-                type: "range",
+                type: "tel",
                 placeholder: "Введите телефон",
                 title: "Телефоны для связи:",
                 is_required: true

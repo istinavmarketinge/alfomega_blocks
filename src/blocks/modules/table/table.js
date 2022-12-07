@@ -23,6 +23,8 @@ const Table = class Table {
             initComplete: function () {
                 self.addPageSelector(this);
                 self.addPaddingToPager();
+                self.addEditClickHandler();
+                self.addSaveClickHandler();
             },
             searching: false,
             responsive: true,
@@ -59,6 +61,20 @@ const Table = class Table {
         input.prop('max', pagesCount);
         input.val(pageNumber+1);
     }
+    addEditClickHandler() {
+        let self = this;
+        $(self.id).on('click', '.table__buttons--edit', function() {
+            console.log(1231231212312123123);
+            $(this).closest('tr').addClass('isEditable');
+        });
+    }
+    addSaveClickHandler() {
+        let self = this;
+        $(self.id).on('click', '.table__buttons--save', function() {
+            console.log(1231231212312123123);
+            $(this).closest('tr').removeClass('isEditable');
+        });
+    }
     init() {
         this.initDataTable();
         let self = this;
@@ -83,6 +99,7 @@ const Table = class Table {
             
             console.log(self.table.api().data().length);
         });
+        
         $(window).on('resize', () => {
             this.addPaddingToPager();
         })

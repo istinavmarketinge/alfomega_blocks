@@ -18,6 +18,22 @@
         &:hover {
             background: #EBF3FF;
         }
+        .edit {
+            // display: none;
+            height: 0;
+            overflow: hidden;
+            select,
+            input[type="text"] {
+                width: 100px;
+            }
+        }
+        &.isEditable .edit {
+            height: auto;
+        }
+        &.isEditable .value {
+            height: 0;
+            overflow: hidden;
+        }
     }
 
     &__styled th {
@@ -72,7 +88,7 @@
         font-size: 16px;
         line-height: 21px;
         color: #001042;
-        padding: 4px 15px;
+        padding: 6px 15px;
         &.child {
             padding: 0 !important;
         }
@@ -205,9 +221,7 @@
         align-items: center;
         justify-content: center;
         box-sizing: border-box;
-        &:not(:first-child) {
-            margin-left: 5px;
-        }
+        margin-right: 5px;
         svg {
             width: 10px;
             fill: #212326;
@@ -221,6 +235,18 @@
             background: #C51313;
         }
     }
+    &__buttons--save {
+        display: none;
+        &:hover {
+            background: green;
+        }
+    }
+    &__styled tr.isEditable &__buttons--save {
+        display: flex;
+    }
+    &__styled tr.isEditable &__buttons--edit {
+        display: none;
+    } 
     &__buttons {
         display: flex;
         align-items: center;
@@ -236,7 +262,7 @@
         border: 1px solid #CBCFD9;
         border-radius: 5px;
         position: relative;
-        margin-left: 5px;
+        display: block;
         cursor: pointer;
         input {
             display: none;

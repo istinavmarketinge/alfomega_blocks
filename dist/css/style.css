@@ -305,6 +305,25 @@ html {
   background: #EBF3FF;
 }
 
+.table__styled tr .edit {
+  height: 0;
+  overflow: hidden;
+}
+
+.table__styled tr .edit select,
+.table__styled tr .edit input[type=text] {
+  width: 100px;
+}
+
+.table__styled tr.isEditable .edit {
+  height: auto;
+}
+
+.table__styled tr.isEditable .value {
+  height: 0;
+  overflow: hidden;
+}
+
 .table__styled th {
   font-style: normal;
   white-space: nowrap;
@@ -365,7 +384,7 @@ html {
   font-size: 16px;
   line-height: 21px;
   color: #001042;
-  padding: 4px 15px;
+  padding: 6px 15px;
 }
 
 .table__styled td.child {
@@ -501,10 +520,7 @@ html {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-}
-
-.table__button--icon:not(:first-child) {
-  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .table__button--icon svg {
@@ -518,6 +534,22 @@ html {
 
 .table__buttons--delete:hover {
   background: #C51313;
+}
+
+.table__buttons--save {
+  display: none;
+}
+
+.table__buttons--save:hover {
+  background: green;
+}
+
+.table__styled tr.isEditable .table__buttons--save {
+  display: flex;
+}
+
+.table__styled tr.isEditable .table__buttons--edit {
+  display: none;
 }
 
 .table__buttons {
@@ -537,7 +569,7 @@ html {
   border: 1px solid #CBCFD9;
   border-radius: 5px;
   position: relative;
-  margin-left: 5px;
+  display: block;
   cursor: pointer;
 }
 
@@ -948,6 +980,11 @@ html {
   display: flex;
 }
 
+.personalTabs__right {
+  display: flex;
+  align-items: center;
+}
+
 .personalTabs__item {
   position: relative;
   padding: 15px 0;
@@ -1034,6 +1071,35 @@ html {
   transform-origin: 50% 50%;
   transform: rotate(-45deg) translate(-14px, 0);
   border: 2px solid #fff;
+}
+
+.personalTabs__cart {
+  margin-right: 25px;
+}
+
+.personalTabs__cart-in {
+  position: relative;
+  cursor: pointer;
+}
+
+.personalTabs__cart-in .icon {
+  width: 25px;
+  font-size: 0;
+  position: relative;
+}
+
+.personalTabs__cart-in .counter {
+  position: absolute;
+  left: 100%;
+  top: -10px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 15px;
+  color: #000000;
+  padding: 3px 8px;
+  border-radius: 50px;
+  background: #F8D830;
 }
 
 @media all and (min-width: 769px) {
