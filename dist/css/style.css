@@ -881,10 +881,6 @@ html {
   padding-top: 40px;
 }
 
-.personalForm__fields--collapsable {
-  display: none;
-}
-
 .personalForm__fields--row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -896,6 +892,7 @@ html {
 }
 
 .personalForm__field-left {
+  white-space: nowrap;
   font-style: normal;
   font-weight: 500;
   /* identical to box height */
@@ -909,6 +906,8 @@ html {
 .personalForm__field-right input[type=text],
 .personalForm__field-right input[type=email],
 .personalForm__field-right input[type=tel],
+.personalForm__field-right input[type=number],
+.personalForm__field-right select,
 .personalForm__field-right textarea {
   width: 100%;
   padding: 7px 16px;
@@ -919,7 +918,7 @@ html {
   margin: 0;
 }
 
-.personalForm__field-right input[type=text]::-moz-placeholder, .personalForm__field-right input[type=email]::-moz-placeholder, .personalForm__field-right input[type=tel]::-moz-placeholder, .personalForm__field-right textarea::-moz-placeholder {
+.personalForm__field-right input[type=text]::-moz-placeholder, .personalForm__field-right input[type=email]::-moz-placeholder, .personalForm__field-right input[type=tel]::-moz-placeholder, .personalForm__field-right input[type=number]::-moz-placeholder, .personalForm__field-right select::-moz-placeholder, .personalForm__field-right textarea::-moz-placeholder {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -933,6 +932,10 @@ html {
 .personalForm__field-right input[type=email]::placeholder,
 .personalForm__field-right input[type=tel],
 .personalForm__field-right input[type=tel]::placeholder,
+.personalForm__field-right input[type=number],
+.personalForm__field-right input[type=number]::placeholder,
+.personalForm__field-right select,
+.personalForm__field-right select::placeholder,
 .personalForm__field-right textarea,
 .personalForm__field-right textarea::placeholder {
   font-style: normal;
@@ -943,12 +946,30 @@ html {
 }
 
 .personalForm__fields--row .personalForm__field-left {
-  width: 119px;
+  width: 180px;
   margin-right: 32px;
 }
 
 .personalForm__fields--row .personalForm__field-right {
   width: calc(100% - 151px);
+}
+
+.personalForm__field-glyph {
+  font-style: normal;
+  font-weight: 500;
+  color: #CBCFD9;
+  margin-left: 13px;
+  width: 30px;
+}
+
+.personalForm__field-glyph.count {
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.personalForm__field-glyph.quantity {
+  font-size: 33px;
+  line-height: 43px;
 }
 
 .personalForm__button {

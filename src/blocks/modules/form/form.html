@@ -19,9 +19,35 @@
                         </div>
                         <div class="personalForm__field-right">
 
-                            `+(fields[i].type != "textarea" ? `<input type="`+ fields[i].type +`" placeholder="`+ fields[i].placeholder +`">` : `<textarea placeholder="`+ fields[i].placeholder +`"></textarea>`)+`
+                            `+(fields[i].type == "text" ?`
+                                <input type="`+ fields[i].type +`" placeholder="`+ fields[i].placeholder +`">
+                            ` : ``)+`
+
+                            `+(fields[i].type == "number" ?`
+                                <input type="`+ fields[i].type +`" min="1" value="100">
+                            ` : ``)+`
+
+                            `+(fields[i].type == "textarea" ?`
+                                <textarea placeholder="`+ fields[i].placeholder +`"></textarea>
+                            ` : ``)+`
+
+
+                            `+(fields[i].type == "select" ?`
+                                <select>
+                                    <option value="test">test</option>
+                                    <option value="test2">test2</option>
+                                    <option value="test3">test3</option>
+                                    <option value="test4">test4</option>
+                                    <option value="test5">test5</option>
+                                </select>
+                            ` : ``)+`
                             
                         </div>
+                        `+(fields[i].type == "number" ?`
+                            <div class="personalForm__field-glyph `+fields[i].glyph_class+`">
+                                `+ fields[i].placeholder +`
+                            </div>
+                        ` : ``)+`
                     </div>
                 }
                 <div class="personalForm__field">
