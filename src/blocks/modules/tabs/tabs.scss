@@ -12,6 +12,7 @@
     &__right {
         display: flex;
         align-items: center;
+        align-self: stretch;
     }
     &__item {
         position: relative;
@@ -89,7 +90,11 @@
         }
     }
     &__cart {
-        margin-right: 25px;
+        margin-right: 45px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
     }
     &__cart-in {
         position: relative;
@@ -112,5 +117,77 @@
             border-radius: 50px;
             background: #F8D830;
         }
+    }
+    &__cart-dropdown {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        z-index: 20;
+        // height: 0;
+    }
+    &__cart-dropdown_in {
+        background: #fff;
+        border: 1px solid #E1E1E1;
+        border-top: none;
+        padding: 35px 35px 0;
+        width: 320px;
+    }
+    &__cart-dropdown_top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 35px;
+    }
+    &__cart-dropdown_title {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 31px;
+        color: #001042;
+    }
+    &__cart-dropdown_closer {
+        width: 60px;
+        cursor: pointer;
+        padding: 20px 20px 0 20px;
+        margin-top: -20px;
+        margin-right: -20px;
+        box-sizing: border-box;
+    }
+    &__cart-dropdown_item {
+        padding: 5px 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        border-bottom: 1px solid #E1E1E1;
+        .table__button {
+            margin-right: 0;
+        }
+    }
+    &__cart-dropdown_item-left {
+        flex: 1 1 auto;
+        
+        .name {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 21px;
+            color: #001042;
+            margin-bottom: 5px;
+        }
+        .price {
+            font-style: normal;
+            font-size: 14px;
+            line-height: 21px;
+            color: #001042;
+        }
+    }
+    &__cart-dropdown_buttons {
+        display: flex;
+        margin-left: -35px;
+        margin-right: -35px;
+    }
+    &__cart-dropdown_button {
+        text-align: center;
+        padding: 20px;
     }
 }
