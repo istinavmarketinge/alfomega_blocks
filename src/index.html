@@ -32,34 +32,7 @@
         type: 1,
         title: "Поставка заготовок"
     })
-    <hr class="delimiter" />
-    @@include('blocks/modules/form/form.html', {
-        is_collapsable: false,
-        title: "Добавление товара из перечня",
-        button_text: "Редактировать",
-        type: 1,
-        has_row: false,
-        fields: [
-            {
-                type: "tel",
-                placeholder: "Введите телефон",
-                title: "Телефоны для связи:",
-                is_required: true
-            },
-            {
-                type: "email",
-                placeholder: "Введите email",
-                title: "Email:",
-                is_required: true
-            },
-            {
-                type: "textarea",
-                placeholder: "Введите адрес",
-                title: "Адрес",
-                is_required: false
-            }
-        ]
-    })
+    
     <!-- @@include('blocks/modules/form/form.html', {
         is_collapsable: true,
         title: "Добавление товара из перечня",

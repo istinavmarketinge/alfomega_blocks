@@ -751,6 +751,7 @@ html {
 
 .tableFiltr {
   margin-bottom: 20px;
+  /* Proof of concept for Firefox */
 }
 
 .tableFiltr__in {
@@ -821,6 +822,119 @@ html {
 
 .tableFiltr__field .field select:focus + .opener {
   transform: rotate(180deg);
+}
+
+.tableFiltr input[type=range] {
+  width: 210px;
+  height: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+}
+
+.tableFiltr input[type=range],
+.tableFiltr input[type=range]::-webkit-slider-runnable-track,
+.tableFiltr input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: none;
+}
+
+.tableFiltr input[type=range]::-webkit-slider-runnable-track {
+  width: 200px;
+  height: 1px;
+  background: #003D7C;
+}
+
+.tableFiltr input[type=range]:nth-child(2)::-webkit-slider-runnable-track {
+  background: none;
+}
+
+.tableFiltr input[type=range]::-webkit-slider-thumb {
+  position: relative;
+  height: 15px;
+  width: 15px;
+  margin-top: -7px;
+  background: #fff;
+  border: 1px solid #003D7C;
+  border-radius: 25px;
+  z-index: 1;
+}
+
+.tableFiltr input[type=range]:nth-child(1)::-webkit-slider-thumb {
+  z-index: 2;
+}
+
+.tableFiltr .rangeslider {
+  position: relative;
+  height: 60px;
+  width: 210px;
+  display: inline-block;
+  margin-top: -5px;
+}
+
+.tableFiltr .rangeslider input {
+  position: absolute;
+}
+
+.tableFiltr .rangeslider {
+  position: absolute;
+}
+
+.tableFiltr .rangeslider span {
+  position: absolute;
+  margin-top: 30px;
+  left: 0;
+}
+
+.tableFiltr .rangeslider .right {
+  position: relative;
+  float: right;
+  margin-right: -5px;
+}
+
+@-moz-document url-prefix()  {
+  .tableFiltr .rangeslider::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: #003D7C;
+    display: block;
+    position: relative;
+    top: 16px;
+  }
+
+  .tableFiltr input[type=range]:nth-child(1) {
+    position: absolute;
+    top: 35px !important;
+    overflow: visible !important;
+    height: 0;
+  }
+
+  .tableFiltr input[type=range]:nth-child(2) {
+    position: absolute;
+    top: 35px !important;
+    overflow: visible !important;
+    height: 0;
+  }
+
+  .tableFiltr input[type=range]::-moz-range-thumb {
+    position: relative;
+    height: 15px;
+    width: 15px;
+    margin-top: -7px;
+    background: #fff;
+    border: 1px solid #003D7C;
+    border-radius: 25px;
+    z-index: 1;
+  }
+
+  .tableFiltr input[type=range]:nth-child(1)::-moz-range-thumb {
+    transform: translateY(-20px);
+  }
+
+  .tableFiltr input[type=range]:nth-child(2)::-moz-range-thumb {
+    transform: translateY(-20px);
+  }
 }
 
 .personalForm__in {
