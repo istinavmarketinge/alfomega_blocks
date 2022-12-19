@@ -1247,6 +1247,7 @@ html {
   right: 0;
   top: 100%;
   z-index: 20;
+  display: none;
 }
 
 .personalTabs__cart-dropdown_in {
@@ -1286,6 +1287,9 @@ html {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+}
+
+.personalTabs__cart-dropdown_item:not(:last-child) {
   border-bottom: 1px solid #E1E1E1;
 }
 
@@ -1317,11 +1321,225 @@ html {
   display: flex;
   margin-left: -35px;
   margin-right: -35px;
+  margin-top: 20px;
+  border-top: 1px solid #E1E1E1;
 }
 
 .personalTabs__cart-dropdown_button {
   text-align: center;
   padding: 20px;
+  flex: 1 1 auto;
+  display: block;
+  text-decoration: none;
+  color: #001042;
+  transition: all 0.3s ease;
+}
+
+.personalTabs__cart-dropdown_button:first-child {
+  border-right: 1px solid #E1E1E1;
+}
+
+.personalTabs__cart-dropdown_button:hover {
+  background: #E1E1E1;
+}
+
+.personalCart {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.personalCart__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+.personalCart__title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 31px;
+  color: #001042;
+}
+
+.personalCart__clear {
+  width: auto;
+}
+
+.personalCart__in {
+  display: flex;
+}
+
+.personalCart__items {
+  width: calc(100% - 340px);
+}
+
+.personalCart__item {
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid #CBCFD9;
+  padding: 20px;
+}
+
+.personalCart__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.personalCart__item-image {
+  width: 200px;
+  height: 200px;
+  margin-right: 25px;
+}
+
+.personalCart__item-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+}
+
+.personalCart__item-info {
+  flex: 1 1 auto;
+}
+
+.personalCart__item-name {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 31px;
+  margin-bottom: 35px;
+  color: #001042;
+}
+
+.personalCart__item-params {
+  max-width: 300px;
+}
+
+.personalCart__item-param {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.personalCart__item-param:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.personalCart__item-param .title {
+  font-weight: bold;
+}
+
+.personalCart__item-buttons-bottom {
+  display: flex;
+  align-items: center;
+}
+
+.personalCart__item-quantity {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  border: 1px solid #CBCFD9;
+  border-radius: 4px;
+}
+
+.personalCart__item-quantity input {
+  border: none;
+  padding: 0;
+  text-align: center;
+  max-width: 100px;
+}
+
+.personalCart__item-quantity-button {
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #001042;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.personalCart__item-quantity-button:hover {
+  background: #CBCFD9;
+}
+
+.personalCart__item-buttons-price {
+  text-align: right;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 31px;
+  margin-bottom: 35px;
+  color: #001042;
+}
+
+.personalCart__delim {
+  height: 1px;
+  background: #CBCFD9;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.personalCart__total {
+  width: 300px;
+  margin-left: 40px;
+  position: relative;
+}
+
+.personalCart__total_in {
+  border: 1px solid #CBCFD9;
+  padding: 20px;
+  box-sizing: border-box;
+  position: sticky;
+  top: 80px;
+}
+
+.personalCart__total-title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 31px;
+  margin-bottom: 35px;
+  color: #001042;
+}
+
+.personalCart__total-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: center;
+  color: #001042;
+}
+
+.personalCart__total-item .title {
+  font-weight: bold;
+}
+
+.personalCart__total-item .title--big {
+  font-size: 28px;
+}
+
+.personalCart__total-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.personalCart__total-items {
+  margin-bottom: 25px;
+}
+
+.personalCart__order {
+  box-sizing: border-box;
 }
 
 @media all and (min-width: 769px) {

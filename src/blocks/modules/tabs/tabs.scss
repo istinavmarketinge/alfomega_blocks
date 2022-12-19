@@ -123,6 +123,7 @@
         right: 0;
         top: 100%;
         z-index: 20;
+        display: none;
         // height: 0;
     }
     &__cart-dropdown_in {
@@ -158,7 +159,9 @@
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        border-bottom: 1px solid #E1E1E1;
+        &:not(:last-child) {
+            border-bottom: 1px solid #E1E1E1;
+        }
         .table__button {
             margin-right: 0;
         }
@@ -185,9 +188,23 @@
         display: flex;
         margin-left: -35px;
         margin-right: -35px;
+        margin-top: 20px;
+        border-top: 1px solid #E1E1E1;
     }
     &__cart-dropdown_button {
         text-align: center;
         padding: 20px;
+        flex: 1 1 auto;
+        display: block;
+        text-decoration: none;
+        color: #001042;
+        transition: all .3s ease;
+        &:first-child {
+            border-right: 1px solid #E1E1E1;
+        }
+        &:hover {
+            background: #E1E1E1;
+            // color: #fff;
+        }
     }
 }
