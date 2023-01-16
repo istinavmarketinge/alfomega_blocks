@@ -15,6 +15,24 @@
             </thead>
             <tbody>
                 @@if (type == 1) {
+                    <tr class="isVip">
+                        <td data-prevent_edit>1</td>
+                        <td>ID 1</td>
+                        <td>Тула</td>
+                        <td>Тип-1</td>
+                        <td>Да</td>
+                        <td>500</td>
+                        <td>150</td>
+                        <td>3-М</td>
+                        <td>Плоские</td>
+                        <td>Есть</td>
+                        <td>Да</td>
+                        <td>Давленный</td>
+                        <td>Краснодар</td>
+                        <td data-prevent_edit>
+                            <button class="table__button">Выбрать</button>
+                        </td>
+                    </tr>
                     @@loop('../../components/table_tr/table_tr.html', "@@loop_by")
                 }
                 @@if (type == 2) {

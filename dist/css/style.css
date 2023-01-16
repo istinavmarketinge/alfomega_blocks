@@ -301,6 +301,11 @@ html {
   transition: all 0.3s ease;
 }
 
+.table__styled tr.isVip {
+  position: relative;
+  background: rgb(253, 255, 133);
+}
+
 .table__styled tr:hover {
   background: #EBF3FF;
 }

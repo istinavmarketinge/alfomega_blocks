@@ -67,38 +67,24 @@
         @@include('../form/form.html', {
             is_collapsable: true,
             title: "Добавление товара из перечня",
-            button_text: "Редактировать",
+            button_text: "Заказать",
             type: 2,
             has_row: true,
             fields: [
                 {
-                    type: "select",
+                    type: "text",
                     options: ['Тип 1', 'Тип 2', 'Тип 3', 'Тип 4'],
                     placeholder: "",
-                    title: "Город:",
+                    title: "Имя:",
                     is_required: true
                 },
                 {
-                    type: "number",
-                    placeholder: "шт.",
-                    "glyph_class": "count",
-                    title: "Количество:",
-                    is_required: true
-                },
-                {
-                    type: "select",
+                    type: "text",
                     options: ['Тип 1', 'Тип 2', 'Тип 3', 'Тип 4'],
                     placeholder: "",
-                    title: "Выбор товара:",
+                    title: "Телефон:",
                     is_required: true
-                },
-                {
-                    type: "number",
-                    placeholder: "₽",
-                    "glyph_class": "quantity",
-                    title: "Цена:",
-                    is_required: true
-                },
+                }
             ]
         })
     </div>

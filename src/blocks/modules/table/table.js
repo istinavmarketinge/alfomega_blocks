@@ -29,6 +29,9 @@ const Table = class Table {
             searching: false,
             responsive: true,
             pagingType: 'simple',
+            columnDefs: [
+                { responsivePriority: 13, targets: -1 }
+            ],
             language: {
                 paginate: {
                     first:      "В начало",

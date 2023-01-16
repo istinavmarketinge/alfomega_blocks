@@ -15,6 +15,10 @@
     &__styled tr {
         border-radius: 8px;
         transition: all .3s ease;
+        &.isVip {
+            position: relative;
+            background: rgb(253, 255, 133);
+        }
         &:hover {
             background: #EBF3FF;
         }
