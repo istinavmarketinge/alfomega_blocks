@@ -1,5 +1,5 @@
 <div class="table table__js">
-    <div class="table__title">@@title</div>
+    <!-- <div class="table__title">@@title</div> -->
     @@include('../filtr/filtr.html', {
         loop_by: "files/table1.json",
         title: "Поставка заготовок"
@@ -16,8 +16,8 @@
             <tbody>
                 @@if (type == 1) {
                     <tr class="isVip">
-                        <td data-prevent_edit>1</td>
-                        <td>ID 1</td>
+                        <td data-prevent_edit>ID 1</td>
+                        <!-- <td>ID 1</td> -->
                         <td>Тула</td>
                         <td>Тип-1</td>
                         <td>Да</td>
@@ -27,8 +27,6 @@
                         <td>Плоские</td>
                         <td>Есть</td>
                         <td>Да</td>
-                        <td>Давленный</td>
-                        <td>Краснодар</td>
                         <td data-prevent_edit>
                             <button class="table__button">Выбрать</button>
                         </td>

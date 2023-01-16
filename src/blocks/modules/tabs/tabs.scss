@@ -6,6 +6,8 @@
     border-bottom: 1px solid #E1E1E1;
     margin-bottom: 60px;
     padding-right: 167px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     &__left {
         display: flex;
     }
@@ -90,7 +92,7 @@
         }
     }
     &__cart {
-        margin-right: 45px;
+        // margin-right: 45px;
         height: 100%;
         display: flex;
         align-items: center;

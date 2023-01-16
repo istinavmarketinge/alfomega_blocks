@@ -761,7 +761,7 @@ html {
 
 .tableFiltr__in {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 20px;
 }
 
@@ -1114,6 +1114,8 @@ html {
   border-bottom: 1px solid #E1E1E1;
   margin-bottom: 60px;
   padding-right: 167px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .personalTabs__left {
@@ -1215,7 +1217,6 @@ html {
 }
 
 .personalTabs__cart {
-  margin-right: 45px;
   height: 100%;
   display: flex;
   align-items: center;
